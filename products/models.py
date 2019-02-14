@@ -12,7 +12,7 @@ class Product(models.Model):
 - izmērs
 - tips
     """
-    def __string__(self):
+    def __str__(self):
         return self.title
 
 
