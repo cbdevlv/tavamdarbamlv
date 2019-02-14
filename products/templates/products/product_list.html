@@ -1,0 +1,15 @@
+{% extends 'homepage.html' %}
+
+{% block content %}
+  <h1>Produktu saraksts</h1>
+  <div class="products">
+    {% for product in products %}
+    <div class="products">
+      <h2>{{product.title}}</h2>
+      <p>{{product.description}}</p>
+      <p>{{product.price}}</p>
+    </div>
+    {% endfor %}
+
+  </div>
+{% endblock %}
