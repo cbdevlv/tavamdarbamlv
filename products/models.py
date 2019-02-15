@@ -7,6 +7,7 @@ class Product(models.Model):
     description = models.TextField()
     image = models.ImageField(default='default.png', blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
+    pvn = models.PositiveSmallIntegerField(default=21)
 
     """
 - izmērs
