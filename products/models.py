@@ -6,6 +6,7 @@ class Product(models.Model):
     slug = models.SlugField()
     description = models.TextField()
     category = models.ForeignKey('Category', on_delete=models.CASCADE, null=True, blank=True)
+    sizes = models.ForeignKey('SizeType', on_delete=models.CASCADE, null=True, blank=True)
     image = models.ImageField(default='default.png', blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     pvn = models.PositiveSmallIntegerField(default=21)
@@ -47,6 +48,23 @@ class Category(models.Model):
             k = k.parent
 
         return ' -> '.join(full_path[::-1])
+
+class SizeType(models.Model):
+    name = models.CharField(max_length=30)
+    size = models.ManyToManyField('Size', blank=True)
+
+    def __str__(self):
+        return self.name
+
+class Size(models.Model):
+    size = models.CharField(max_length=30)
+
+    def __str__(self):
+        return self.size
+
+
+
+
 
 
 
