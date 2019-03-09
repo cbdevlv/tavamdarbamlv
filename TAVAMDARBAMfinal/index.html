@@ -1,21 +1,32 @@
 <!DOCTYPE html>
 <html lang="lv">
+
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Viss Tavam Darbam</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-	<link href="style.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Viss Tavam Darbam</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="script.js"></script>
+    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
 </head>
 <!--Navigation-->
-<nav class="navbar navbar-light fixed-top bg-light flex-md-nowrap p-0 shadow">
+<nav class="navbar navbar-light sticky-top bg-light flex-md-nowrap p-0 shadow">
     <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">
-        <img class="brand-image"src="img/logozalspilns.jpg">
+        <img class="brand-image" src="img/logozalspilns.jpg">
     </a>
+    
+
+            <button type="button" id="sidebarCollapse" class="btn btnmenu d-md-none">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+ 
     <input class="form-control form-control-dark w-100" type="text" placeholder="Meklēt" aria-label="Search">
     <ul class="navbar-nav px-3 flex-row">
         <li class="nav-item text-nowrap btnmenu">
@@ -23,25 +34,22 @@
         </li>
         <li class="nav-item text-nowrap btnmenu">
             <a href="#" class="btn btn-light btnmenu my-sm-0">
-				<i class="fas fa-shopping-cart"></i> Grozs
-			</a>
+                <i class="fas fa-shopping-cart"></i> Grozs
+            </a>
         </li>
     </ul>
 </nav>
-<hr>
-<!--Side Bar-->
-<div class="container-fluid">
-    <div class="row">
-        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-            <div class="sidebar-sticky">
-                <ul class="list-unstyled components">
-                    <li class="nav-item active">
-                        <a class="nav-link dropdown-toggle" href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" >VISAS PRECES</a>
+<div class="wrapper">
+        <!--Side Bar-->
+        <nav id="sidebar">    
+            <ul class="list-unstyled components">
+                    <li class="active">
+                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">VISAS PRECES</a>
                         <ul class="collapse list-unstyled" id="homeSubmenu">
-                             <li>
-                                 <a href="#">Darba cimdi</a>
-                             </li>
-                             <li>
+                            <li>
+                                <a href="#">Darba cimdi</a>
+                            </li>
+                            <li>
                                 <a href="#">Acu un sejas aizsardzība</a>
                             </li>
                             <li>
@@ -71,6 +79,12 @@
                         </ul>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="#">ĪPAŠIE PIEDĀVĀJUMI</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">IZPĀRDOŠANA</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#">PIEGĀDE</a>
                     </li>
                     <li class="nav-item">
@@ -79,16 +93,16 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">KONTAKTI</a>
                     </li>
-                </ul>
+            </ul>
         </nav>
-            <!--MAIN-->
-            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-                <div id="slides" class="carousel slide" data-ride="carousel">
-                    <ul class="carousel-indicators">
-                        <li data-target="#slides" data-slide-to="0" class="active"></li>
-                        <li data-target="#slides" data-slide-to="1"></li>
-                        <li data-target="#slides" data-slide-to="2"></li>
-                    </ul>
+        <!--Content-->
+        <main id="content"role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+            <div id="slides" class="carousel slide" data-ride="carousel">
+                <ul class="carousel-indicators">
+                    <li data-target="#slides" data-slide-to="0" class="active"></li>
+                    <li data-target="#slides" data-slide-to="1"></li>
+                    <li data-target="#slides" data-slide-to="2"></li>
+                </ul>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img src="img/TD Green backgrnd.png">
@@ -100,306 +114,303 @@
                     <div class="carousel-item">
                         <img src="img/TD Green backgrnd.png">
                         <div class="carousel-caption">
-                                <h1 class="display-2"></h1>
-                                <h3>900x150 baneris</h3>
+                            <h1 class="display-2"></h1>
+                            <h3>900x150 baneris</h3>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <img src="img/TD Green backgrnd.png">
                         <div class="carousel-caption">
-                                <h1 class="display-2"></h1>
-                                <h3>900x150 baneris</h3>
+                            <h1 class="display-2"></h1>
+                            <h3>900x150 baneris</h3>
                         </div>
                     </div>
-                </div>	
                 </div>
+            </div>
 
-                <div class="container-fluid padding">
-                    <div class="row welcome text-center">
-                        <div class="col-12">
-                            <h3>Populārākie Produkti</h3>
-                        </div>
-                        <hr>
-                    </div>
-                </div>
-                <hr>
-                <div class="container">
-                    <div class="row padding">
-                        <!--Product1-->
-                        <div class="col-md-2 col-6 product-grid">
-                            <div class="image">
-                                <a href="#">
-                                    <img src="img/apgerbs1.png" class="w-100">
-                                    <div class="overlay">
-                                        <div class="details text-center">Skatīt detaļas </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="product">
-                                <h6 class="text-center">Darba Jakas</h6>
-                            </div>
-                            <div class="btndiv">
-                                <a href="#" class="btn buy">&euro; 45.00<i class="fas fa-shopping-cart"></i></a>
-                            </div>
-                        </div>
-                        <!--product-->
-                
-                        <!--Product2-->
-                        <div class="col-md-2 col-6 product-grid">
-                            <div class="image">
-                                <a href="#">
-                                    <img src="img/apgerbs2.png" class="w-100">
-                                    <div class="overlay">
-                                        <div class="details text-center">Skatīt detaļas </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="product">
-                                <h6 class="text-center">Cimdi</h6>
-                            </div>
-                
-                            <a href="#" class="btn buy">&euro; 14.00<i class="fas fa-shopping-cart"></i></a>
-                        </div>
-                        <!--product-->
-                
-                        <!--Product3-->
-                        <div class="col-md-2 col-6 product-grid">
-                            <div class="image">
-                                <a href="#">
-                                    <img src="img/apgerbs3.png" class="w-100">
-                                    <div class="overlay">
-                                        <div class="details text-center">Skatīt detaļas </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="product">
-                                <h6 class="text-center">Peltor G3000NUV-VI aizsargķivere</h6>
-                            </div>
-                            <div class="btndiv">
-                                <a href="#" class="btn buy">&euro; 16.99<i class="fas fa-shopping-cart"></i></a>
-                            </div>
-                        </div>
-                        <!--product-->
-                
-                        <!--Product4-->
-                        <div class="col-md-2 col-6 product-grid">
-                            <div class="image">
-                                <a href="./productpage.html">
-                                    <img src="img/apgerbs4.png" class="w-100">
-                                    <div class="overlay">
-                                        <div class="details text-center">Skatīt detaļas </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="product">
-                                <h6 class="text-center">Krāsotāja maska</h6>
-                            </div>
-                            <div class="btndiv">
-                                <a href="#" class="btn buy">&euro; 16.99<i class="fas fa-shopping-cart"></i></a>
-                            </div>
-                        </div>
-                        <!--Product5-->
-                        <div class="col-md-2 col-6 product-grid">
-                            <div class="image">
-                                <a href="#">
-                                    <img src="img/apgerbs4.png" class="w-100">
-                                    <div class="overlay">
-                                        <div class="details text-center">Skatīt detaļas </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="product">
-                                <h6 class="text-center">Krāsotāja maska</h6>
-                            </div>
-                            <div class="btndiv">
-                                <a href="#" class="btn buy">&euro; 16.99<i class="fas fa-shopping-cart"></i></a>
-                            </div>
-                        </div>
-                        <!--Product6-->
-                        <div class="col-md-2 col-6 product-grid">
-                            <div class="image">
-                                <a href="#">
-                                    <img src="img/apgerbs4.png" class="w-100">
-                                    <div class="overlay">
-                                        <div class="details text-center">Skatīt detaļas </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="product">
-                                <h6 class="text-center">Krāsotāja maska</h6>
-                            </div>
-                            <div class="btndiv">
-                                <a href="#" class="btn buy">&euro; 16.99<i class="fas fa-shopping-cart"></i></a>
-                            </div>
-                        </div>
-                        <!--product-->
+            <div class="container-fluid padding">
+                <div class="row welcome text-center">
+                    <div class="col-12">
+                        <h3>Populārākie Produkti</h3>
                     </div>
                     <hr>
-                    <div class="row">
-                        <!--Product1-->
-                        <div class="col-md-2 col-6 product-grid">
-                            <div class="image">
-                                <a href="#">
-                                    <img src="img/apgerbs1.png" class="w-100">
-                                    <div class="overlay">
-                                        <div class="details text-center">Skatīt detaļas </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="product">
-                                <h6 class="text-center">Darba Jakas</h6>
-                            </div>
-                            <div class="btndiv">
-                                <a href="#" class="btn buy">&euro; 45.00<i class="fas fa-shopping-cart"></i></a>
-                            </div>
+                </div>
+            </div>
+            <hr>
+            <div class="container">
+                <div class="row padding">
+                    <!--Product1-->
+                    <div class="col-md-2 col-6 product-grid">
+                        <div class="image">
+                            <a href="#">
+                                <img src="img/apgerbs1.png" class="w-100">
+                                <div class="overlay">
+                                    <div class="details text-center">Skatīt detaļas </div>
+                                </div>
+                            </a>
                         </div>
-                        <!--product-->
-                
-                        <!--Product2-->
-                        <div class="col-md-2 col-6 product-grid">
-                            <div class="image">
-                                <a href="#">
-                                    <img src="img/apgerbs2.png" class="w-100">
-                                    <div class="overlay">
-                                        <div class="details text-center">Skatīt detaļas </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="product">
-                                <h6 class="text-center">Cimdi</h6>
-                            </div>
-                
-                            <a href="#" class="btn buy">&euro; 14.00<i class="fas fa-shopping-cart"></i></a>
+                        <div class="product">
+                            <h6 class="text-center">Darba Jakas</h6>
                         </div>
-                        <!--product-->
-                
-                        <!--Product3-->
-                        <div class="col-md-2 col-6 product-grid">
-                            <div class="image">
-                                <a href="#">
-                                    <img src="img/apgerbs3.png" class="w-100">
-                                    <div class="overlay">
-                                        <div class="details text-center">Skatīt detaļas </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="product">
-                                <h6 class="text-center">Peltor G3000NUV-VI aizsargķivere</h6>
-                            </div>
-                            <div class="btndiv">
-                                <a href="#" class="btn buy">&euro; 16.99<i class="fas fa-shopping-cart"></i></a>
-                            </div>
+                        <div class="btndiv">
+                            <a href="#" class="btn buy">&euro; 45.00<i class="fas fa-shopping-cart"></i></a>
                         </div>
-                        <!--product-->
-                
-                        <!--Product4-->
-                        <div class="col-md-2 col-6 product-grid">
-                            <div class="image">
-                                <a href="#">
-                                    <img src="img/apgerbs4.png" class="w-100">
-                                    <div class="overlay">
-                                        <div class="details text-center">Skatīt detaļas </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="product">
-                                <h6 class="text-center">Krāsotāja maska</h6>
-                            </div>
-                            <div class="btndiv">
-                                <a href="#" class="btn buy">&euro; 16.99<i class="fas fa-shopping-cart"></i></a>
-                            </div>
-                        </div>
-                        <!--Product5-->
-                        <div class="col-md-2 col-6 product-grid">
-                            <div class="image">
-                                <a href="#">
-                                    <img src="img/apgerbs4.png" class="w-100">
-                                    <div class="overlay">
-                                        <div class="details text-center">Skatīt detaļas </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="product">
-                                <h6 class="text-center">Krāsotāja maska</h6>
-                            </div>
-                            <div class="btndiv">
-                                <a href="#" class="btn buy">&euro; 16.99<i class="fas fa-shopping-cart"></i></a>
-                            </div>
-                        </div>
-                        <!--Product6-->
-                        <div class="col-md-2 col-6 product-grid">
-                            <div class="image">
-                                <a href="#">
-                                    <img src="img/apgerbs4.png" class="w-100">
-                                    <div class="overlay">
-                                        <div class="details text-center">Skatīt detaļas </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="product">
-                                <h6 class="text-center">Krāsotāja maska</h6>
-                            </div>
-                            <div class="btndiv">
-                                <a href="#" class="btn buy">&euro; 16.99<i class="fas fa-shopping-cart"></i></a>
-                            </div>
-                        </div>
-                        <!--product-->
                     </div>
-                    
+                    <!--product-->
+
+                    <!--Product2-->
+                    <div class="col-md-2 col-6 product-grid">
+                        <div class="image">
+                            <a href="#">
+                                <img src="img/apgerbs2.png" class="w-100">
+                                <div class="overlay">
+                                    <div class="details text-center">Skatīt detaļas </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="product">
+                            <h6 class="text-center">Cimdi</h6>
+                        </div>
+
+                        <a href="#" class="btn buy">&euro; 14.00<i class="fas fa-shopping-cart"></i></a>
+                    </div>
+                    <!--product-->
+
+                    <!--Product3-->
+                    <div class="col-md-2 col-6 product-grid">
+                        <div class="image">
+                            <a href="#">
+                                <img src="img/apgerbs3.png" class="w-100">
+                                <div class="overlay">
+                                    <div class="details text-center">Skatīt detaļas </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="product">
+                            <h6 class="text-center">Peltor G3000NUV-VI aizsargķivere</h6>
+                        </div>
+                        <div class="btndiv">
+                            <a href="#" class="btn buy">&euro; 16.99<i class="fas fa-shopping-cart"></i></a>
+                        </div>
+                    </div>
+                    <!--product-->
+
+                    <!--Product4-->
+                    <div class="col-md-2 col-6 product-grid">
+                        <div class="image">
+                            <a href="./productpage.html">
+                                <img src="img/apgerbs4.png" class="w-100">
+                                <div class="overlay">
+                                    <div class="details text-center">Skatīt detaļas </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="product">
+                            <h6 class="text-center">Krāsotāja maska</h6>
+                        </div>
+                        <div class="btndiv">
+                            <a href="#" class="btn buy">&euro; 16.99<i class="fas fa-shopping-cart"></i></a>
+                        </div>
+                    </div>
+                    <!--Product5-->
+                    <div class="col-md-2 col-6 product-grid">
+                        <div class="image">
+                            <a href="#">
+                                <img src="img/apgerbs4.png" class="w-100">
+                                <div class="overlay">
+                                    <div class="details text-center">Skatīt detaļas </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="product">
+                            <h6 class="text-center">Krāsotāja maska</h6>
+                        </div>
+                        <div class="btndiv">
+                            <a href="#" class="btn buy">&euro; 16.99<i class="fas fa-shopping-cart"></i></a>
+                        </div>
+                    </div>
+                    <!--Product6-->
+                    <div class="col-md-2 col-6 product-grid">
+                        <div class="image">
+                            <a href="#">
+                                <img src="img/apgerbs4.png" class="w-100">
+                                <div class="overlay">
+                                    <div class="details text-center">Skatīt detaļas </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="product">
+                            <h6 class="text-center">Krāsotāja maska</h6>
+                        </div>
+                        <div class="btndiv">
+                            <a href="#" class="btn buy">&euro; 16.99<i class="fas fa-shopping-cart"></i></a>
+                        </div>
+                    </div>
+                    <!--product-->
                 </div>
                 <hr>
-                <!--- Connect -->
-<div class="container-fluid padding">
-	<div class="row text-center padding">
-		<div class="col-12">
-			<h2>Seko aktualitātēm</h2>
-		</div>
-		<div class="col-12 social padding">
-			<a href="https://www.facebook.com/tavamdarbam/" target="_blank"><i class="fab fa-facebook"></i></a>
-			<a href="https://www.instagram.com/visstavamdarbam/" target="_blank"><i class="fab fa-instagram"></i></a>
-		</div>
-	</div>
-</div>
-<!--- Footer -->
-<footer>
-	<div class="container-fluid padding">
-		<div class="row text-center">
-			 <div class="col-md-4">
-				 <img src="img/logotavam darbam mazs.png">
-				 <hr class="light">
-				 <p>+371 99999999</p>
-				 <p>info@tavamdarbam.lv</p>
-				 <p>Brīvības iela 999-99</p>
-				 <p>Rīga, LV-1010</p>
-			 </div>
-			 <div class="col-md-4">
-				 <hr class="light">
-				 <h5>Papildus Informācija</h5>
-				 <hr class="light">
-				 <p>info</p>
-				 <p>info</p>
-				 <p>info</p>
-			 </div>
-			 <div class="col-md-4">
-					<hr class="light">
-					<h5>Papildus Informācija</h5>
-					<hr class="light">
-					<p>info</p>
-					<p>info</p>
-					<p>info</p>
-				</div>
-				<div class="col-12">
-					<hr class="light-100">
-					<h5>&copy CBDEV</h5>
-				</div>
-		</div>
-	</div>
+                <div class="row">
+                    <!--Product1-->
+                    <div class="col-md-2 col-6 product-grid">
+                        <div class="image">
+                            <a href="#">
+                                <img src="img/apgerbs1.png" class="w-100">
+                                <div class="overlay">
+                                    <div class="details text-center">Skatīt detaļas </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="product">
+                            <h6 class="text-center">Darba Jakas</h6>
+                        </div>
+                        <div class="btndiv">
+                            <a href="#" class="btn buy">&euro; 45.00<i class="fas fa-shopping-cart"></i></a>
+                        </div>
+                    </div>
+                    <!--product-->
 
-</footer>
-            </main>
-            
-        </div>
-    </div>
-    
-</div>
+                    <!--Product2-->
+                    <div class="col-md-2 col-6 product-grid">
+                        <div class="image">
+                            <a href="#">
+                                <img src="img/apgerbs2.png" class="w-100">
+                                <div class="overlay">
+                                    <div class="details text-center">Skatīt detaļas </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="product">
+                            <h6 class="text-center">Cimdi</h6>
+                        </div>
 
+                        <a href="#" class="btn buy">&euro; 14.00<i class="fas fa-shopping-cart"></i></a>
+                    </div>
+                    <!--product-->
+
+                    <!--Product3-->
+                    <div class="col-md-2 col-6 product-grid">
+                        <div class="image">
+                            <a href="#">
+                                <img src="img/apgerbs3.png" class="w-100">
+                                <div class="overlay">
+                                    <div class="details text-center">Skatīt detaļas </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="product">
+                            <h6 class="text-center">Peltor G3000NUV-VI aizsargķivere</h6>
+                        </div>
+                        <div class="btndiv">
+                            <a href="#" class="btn buy">&euro; 16.99<i class="fas fa-shopping-cart"></i></a>
+                        </div>
+                    </div>
+                    <!--product-->
+
+                    <!--Product4-->
+                    <div class="col-md-2 col-6 product-grid">
+                        <div class="image">
+                            <a href="#">
+                                <img src="img/apgerbs4.png" class="w-100">
+                                <div class="overlay">
+                                    <div class="details text-center">Skatīt detaļas </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="product">
+                            <h6 class="text-center">Krāsotāja maska</h6>
+                        </div>
+                        <div class="btndiv">
+                            <a href="#" class="btn buy">&euro; 16.99<i class="fas fa-shopping-cart"></i></a>
+                        </div>
+                    </div>
+                    <!--Product5-->
+                    <div class="col-md-2 col-6 product-grid">
+                        <div class="image">
+                            <a href="#">
+                                <img src="img/apgerbs4.png" class="w-100">
+                                <div class="overlay">
+                                    <div class="details text-center">Skatīt detaļas </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="product">
+                            <h6 class="text-center">Krāsotāja maska</h6>
+                        </div>
+                        <div class="btndiv">
+                            <a href="#" class="btn buy">&euro; 16.99<i class="fas fa-shopping-cart"></i></a>
+                        </div>
+                    </div>
+                    <!--Product6-->
+                    <div class="col-md-2 col-6 product-grid">
+                        <div class="image">
+                            <a href="#">
+                                <img src="img/apgerbs4.png" class="w-100">
+                                <div class="overlay">
+                                    <div class="details text-center">Skatīt detaļas </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="product">
+                            <h6 class="text-center">Krāsotāja maska</h6>
+                        </div>
+                        <div class="btndiv">
+                            <a href="#" class="btn buy">&euro; 16.99<i class="fas fa-shopping-cart"></i></a>
+                        </div>
+                    </div>
+                    <!--product-->
+                </div>
+
+            </div>
+            <hr>
+            <!--- Connect -->
+            <div class="container-fluid padding">
+                <div class="row text-center padding">
+                    <div class="col-12">
+                        <h2>Seko aktualitātēm</h2>
+                    </div>
+                    <div class="col-12 social padding">
+                        <a href="https://www.facebook.com/tavamdarbam/" target="_blank"><i
+                                class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/visstavamdarbam/" target="_blank"><i
+                                class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!--- Footer -->
+            <footer>
+                <div class="container-fluid padding">
+                    <div class="row text-center">
+                        <div class="col-md-4">
+                            <img src="img/logotavam darbam mazs.png">
+                            <hr class="light">
+                            <p>+371 99999999</p>
+                            <p>info@tavamdarbam.lv</p>
+                            <p>Brīvības iela 999-99</p>
+                            <p>Rīga, LV-1010</p>
+                        </div>
+                        <div class="col-md-4">
+                            <hr class="light">
+                            <h5>Papildus Informācija</h5>
+                            <hr class="light">
+                            <p>info</p>
+                            <p>info</p>
+                            <p>info</p>
+                        </div>
+                        <div class="col-md-4">
+                            <hr class="light">
+                            <h5>Papildus Informācija</h5>
+                            <hr class="light">
+                            <p>info</p>
+                            <p>info</p>
+                            <p>info</p>
+                        </div>
+                        <div class="col-12">
+                            <hr class="light-100">
+                            <h5>&copy CBDEV</h5>
+                        </div>
+                    </div>
+                </div>
+
+            </footer>
+        </main>  
+</div>

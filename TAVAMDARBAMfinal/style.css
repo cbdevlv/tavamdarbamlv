@@ -1,18 +1,10 @@
-.flex-column {
-    flex-direction: column!important;
-}
-
 /*
  * Navbar
  */
-
- .navbar-brand {
-    /*padding-top: .75rem;
-    padding-bottom: .75rem;
-    font-size: 1rem;
-    background-color:#086644;
-    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);*/
+  .navbar {
+    padding: .8rem;
   }
+  
   .brand-image {
     width: 100%;
     height: 100%;
@@ -33,39 +25,89 @@
     border-color: transparent;
     box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
   }
-.navbar-brand{
+  .navbar-brand {
   position: relative;
-}
-
+  padding: 2.5px;
+  }
 
   .btnmenu:hover{
     background: #086644;
     color: #fff;
   }
-
-  .navbar-nav li {
-  
+/*
+ * Navbar End
+ */
+  .wrapper {
+    display: flex;
+    /* align-items: stretch;*/ 
   }
 
-.sidebar {
+ /*
+ * Sidebar
+ */
+  #sidebar {
+    min-width: 250px;
+    max-width: 250px;
+   min-height: 100vh;
+    background: #AEDCC0;
+    color: #fff;
+    transition: all 0.3s;
+    margin-top: 15px;
     position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 100; /* Behind the navbar */
-    padding: 48px 0 0; /* Height of navbar */
-    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
   }
 
-.sidebar-sticky {
+  #sidebar ul.components {
+    padding: 20px 0;
+    border-bottom: 1px solid #fff;
+  }
+
+  #sidebar ul li a {
+  padding: 10px;
+  font-size: 1.1em;
+  display: block;
+  }
+
+  #sidebar ul li a:hover {
+    color: #086644;
+    background: #fff;
+  }
+
+  #sidebar ul li.active > a, a[aria-expanded="true"] {
+    color: #fff;
+    background: #AEDCC0;
+  }
+
+  ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #AEDCC0;
+}
+
+  #sidebar.active {
+    margin-left: -250px;
+  }
+
+  a[data-toggle="collapse"] {
     position: relative;
-    top: 0;
-    height: calc(100vh - 48px);
-    padding-top: .5rem;
-    overflow-x: hidden;
-   /* overflow-y: auto;  Scrollable contents if viewport is shorter than content. */
   }
 
+  .dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+  }
+
+  a, a:hover, a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+  /*
+ * Sidebar End
+ */
   .carousel-inner img {
     width: 100%;
     height: 100%;
@@ -130,4 +172,79 @@
   .product{
    height: 60px;
    padding-top: 0.5em; 
+  }
+
+  @media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+}
+
+/*---Media Queries --*/
+@media (max-width: 992px) {
+  .social a {
+    font-size: 4em;
+    padding: 2rem;
+  }
+    }
+  @media (max-width: 768px) {
+    .carousel-caption {
+      top: 45%;
+      
+      }
+      .carousel-caption h1 {
+        font-size: 350%;
+      }
+      .carousel-caption h3 {
+        font-size: 140%;
+        font-weight: 400;
+        padding-bottom: .2rem;
+      }   
+      .display-4 {
+        font-size: 200%;
+      }
+      .social a {
+        font-size: 2.5em;
+        padding: 1.2rem;
+      }
+  }
+  @media (max-width: 576px) {
+    .carousel-caption {
+      top: 40%;
+      
+      }
+      .carousel-caption h1 {
+        font-size: 250%;
+      }
+      .carousel-caption h3 {
+        font-size: 110%;
+      }  
+      .carousel-indicators {
+        display: none;
+      } 
+      .display-4 {
+        font-size: 160%;
+      }
+      .social a {
+        font-size: 2em;
+        padding: .7rem;
+      }
+  }
+  
+  
+  /*---Firefox Bug Fix --*/
+  .carousel-item {
+    transition: -webkit-transform 0.5s ease;
+    transition: transform 0.5s ease;
+    transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+    -webkit-backface-visibility: visible;
+    backface-visibility: visible;
+  }
+ 
+  /*--- Bootstrap Padding Fix --*/
+  [class*="col-"] {
+      padding: 1rem;
   }
