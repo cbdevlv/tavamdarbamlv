@@ -38,7 +38,8 @@ html, main {
   }
 
   .btnmenu {
-    background: rgba(232, 241, 238, 0.7);    
+    background: rgba(232, 241, 238, 0.7);
+    margin-right: 0.2em;    
   }
 
   .btnmenu:hover{
@@ -64,7 +65,7 @@ html, main {
     color:;
     transition: all 0.3s;
     margin-top: 15px;
-    
+    margin-bottom: 15px;
   }
 
   #sidebar ul.components {
@@ -222,6 +223,10 @@ html, main {
 .padding {
   padding-bottom: 2rem;
 }
+.about-us {
+  text-align: justify;
+}
+
 .container {
     padding-top: 50px;
 }
