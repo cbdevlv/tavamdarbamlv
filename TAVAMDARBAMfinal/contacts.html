@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="lv">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Krāsotāja pusmaska</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="script.js"></script>
+    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+</head>
+<!--Navigation-->
+<nav class="navbar navbar-light sticky-top  flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="./index.html">
+        <img class="brand-image" src="img/logozalspilns.jpg">
+    </a>
+            <button type="button" id="sidebarCollapse" class="btn btnmenu d-md-none">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    <input class="form-control form-control-dark w-100" type="text" placeholder="Meklēt" aria-label="Search">
+    <ul class="navbar-nav px-3 flex-row">
+        <li class="nav-item text-nowrap btnmenu ">
+            <a class="btn  btnmenu my-sm-0" href="#">Ienākt</a>
+        </li>
+        <li class="nav-item text-nowrap btnmenu mx-2">
+            <a href="#" class="btn  btnmenu my-sm-0">
+                <i class="fas fa-shopping-cart"></i> Grozs
+            </a>
+        </li>
+    </ul>
+</nav>
+<div class="wrapper">
+    <!--Side Bar-->
+    <nav id="sidebar">    
+        <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fas fa-bars"></i> VISAS PRECES</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a href="#">Darba cimdi</a>
+                        </li>
+                        <li>
+                            <a href="#">Acu un sejas aizsardzība</a>
+                        </li>
+                        <li>
+                            <a href="#">Dzirdes aizsardzība</a>
+                        </li>
+                        <li>
+                            <a href="#">Galvas aizsarglīdzekļi</a>
+                        </li>
+                        <li>
+                            <a href="#">Elpošanas aizsardzība</a>
+                        </li>
+                        <li>
+                            <a href="#">Darba apavi</a>
+                        </li>
+                        <li>
+                            <a href="#">Darba apģērbs</a>
+                        </li>
+                        <li>
+                            <a href="#">Aizsargapģērbs</a>
+                        </li>
+                        <li>
+                            <a href="#">Norobežojumi</a>
+                        </li>
+                        <li>
+                            <a href="#">Industriālais papīrs</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-percent"></i> ĪPAŠIE PIEDĀVĀJUMI</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-exclamation-circle"></i> IZPĀRDOŠANA</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-shipping-fast"></i> PIEGĀDE</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="far fa-building"></i> PAR MUMS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./contacts.html"><i class="fas fa-address-book"></i> KONTAKTI</a>
+                </li>
+        </ul>
+    </nav>
+    <!--Content-->
+    <main id="content"role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+            <div class="container">
+                <div class="row welcome">
+                     <div class="col-12">
+                            <h3>KONTAKTI</h3>
+                    </div>
+                </div> 
+                <hr>   
+                <div class="row welcome">    
+                    <div class="col-12">
+                            <h5>ADRESE: Brīvības iela 999-99, Rīga, LV-1010</h5>
+                            <h5>E-PASTS: info@tavamdarbam.lv</h5>
+                            <h5>TĀLRUNIS: +371 99999999</h5>
+                    </div>
+                </div> 
+                <div class="row welcome">
+                        <div class="col-12">
+                               <h3>REKVIZĪTI</h3>
+                       </div>
+                   </div> 
+                   <hr>   
+                   <div class="row welcome">    
+                       <div class="col-12">
+                               <h5>NOSAUKUMS: SIA "TavamDarbam.lv"</h5>
+                               <h5>Reģ. Nr.: 96555555555</h5>
+                               <h5>PVN maks. Nr.: LV96555555555</h5>
+                               <h5>JURIDISKĀ ADRESE: Valdemāra iela 999-99, Rīga, LV-1010</h5>
+                       </div>
+                   </div>     
+                
+            </div> 
+    <hr>
+
+        <!--- Footer -->
+        <footer>
+            <div class="container-fluid padding">
+                <div class="row text-center">
+                    <div class="col-md-4">
+                        <img src="img/logotavam darbam mazs.png">
+                        <hr class="light">
+                        <p>+371 99999999</p>
+                        <p>info@tavamdarbam.lv</p>
+                        <p>Brīvības iela 999-99</p>
+                        <p>Rīga, LV-1010</p>
+                    </div>
+                    <div class="col-md-4">
+                        <hr class="light">
+                        <h5>Papildus Informācija</h5>
+                        <hr class="light">
+                        <p>info</p>
+                        <p>info</p>
+                        <p>info</p>
+                    </div>
+                    <div class="col-md-4">
+                        <hr class="light">
+                        <h5>Papildus Informācija</h5>
+                        <hr class="light">
+                        <p>info</p>
+                        <p>info</p>
+                        <p>info</p>
+                    </div>
+                    <div class="col-12">
+                        <hr class="light-100">
+                        <h5>&copy CBDEV</h5>
+                    </div>
+                </div>
+            </div>
+
+        </footer>
+    </main>  
+</div>
