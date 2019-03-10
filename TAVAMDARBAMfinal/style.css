@@ -1,8 +1,15 @@
+html, main {
+  height: 100%;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  color: #222;
+}
 /*
  * Navbar
  */
   .navbar {
-    padding: .8rem;
+    padding: .5rem;
+    background: #AEDCC0
   }
 
   .brand-image {
@@ -10,9 +17,10 @@
     height: 100%;
   }
   .navbar .form-control {
-    padding: .75rem 1rem;
+    padding: .45rem 1rem;
     border-width: 0;
-    border-radius: 0;
+    border-radius: 0.5;
+    background: rgba(232, 241, 238, 0.7);
   }
   
   .form-control-dark {
@@ -27,7 +35,10 @@
   }
   .navbar-brand {
   position: relative;
-  padding: 2.5px;
+  }
+
+  .btnmenu {
+    background: rgba(232, 241, 238, 0.7);
   }
 
   .btnmenu:hover{
@@ -50,7 +61,7 @@
     max-width: 250px;
    min-height: 100vh;
     background: #AEDCC0;
-    color: #fff;
+    color:;
     transition: all 0.3s;
     margin-top: 15px;
     
@@ -73,8 +84,8 @@
   }
 
   #sidebar ul li.active > a, a[aria-expanded="true"] {
-    color: #fff;
-    background: #AEDCC0;
+    color:;
+    background: rgba(232, 241, 238, 0.7);
   }
 
   ul ul a {
@@ -110,7 +121,8 @@
  */
   .carousel-inner img {
     width: 100%;
-    height: 100%;
+    height: 312px;
+    
   }
 
   .buy:hover{
@@ -150,11 +162,22 @@
     border-radius: 0;
     border: 1px solid #434444;
     width: 100%;
-    
-   
+    font-size: 0.8em;
   }
+
+  h6 {
+    font-size: 0.8em;
+  }
+  h5 {
+    font-size: 1em;
+  }
+
   .fa-shopping-cart {
-    height: 14px;
+    height: 0.9em;
+  }
+
+  .row {
+    height: 100%;
   }
 
   .product-grid {
@@ -172,6 +195,68 @@
   .product{
    height: 60px;
    padding-top: 0.5em; 
+  }
+
+  .newarrival {
+    background: green;
+    width: 65px;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  .price {
+    color: ;
+    font-size: 26px;
+    font-weight: bold;
+    padding-top: 20px;
+  }
+  .quantity {
+    border: 1px solid #ccc;
+    font-weight: bold;
+    height: 33px;
+    text-align: center;
+    width: 30px;
+  }
+
+}
+.padding {
+  padding-bottom: 2rem;
+}
+.container {
+    padding-top: 50px;
+}
+
+  .social a {
+    font-size: 4.5em;
+    padding: 3rem;
+  }
+  .fa-facebook {
+    color: #3b5998;
+  }
+  .fa-instagram {
+    color: #517fa4; 
+  }
+  .fa-facebook:hover,
+  .fa-instagram:hover {
+    color: #d5d5d5;
+  }
+
+  footer {
+    background-color: #086644;
+    color: #d5d5d5;
+    padding-top: 2rem;
+  }
+  hr.light {
+    border-top: 1px solid #d5d5d5;
+    width: 75%;
+    margin-top: .8rem;
+    margin-bottom: 1rem;
+  }
+  hr.light-100 {
+    border-top: 1px solid #d5d5d5;
+    width: 100%;
+    margin-top: .8rem;
+    margin-bottom: 1rem;
   }
 
   @media (max-width: 768px) {
@@ -231,6 +316,12 @@
       .social a {
         font-size: 2em;
         padding: .7rem;
+      }
+      .fa-shopping-cart {
+        height: 0.7em;
+      }
+      .buy {
+        font-size: 0.6em;
       }
   }
   
