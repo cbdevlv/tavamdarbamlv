@@ -7,6 +7,7 @@ class Product(models.Model):
     description = models.TextField()
     category = models.ForeignKey('Category', on_delete=models.CASCADE, null=True, blank=True)
     sizes = models.ForeignKey('SizeType', on_delete=models.CASCADE, null=True, blank=True)
+    colors = models.ManyToManyField('Color', blank=True)
     image = models.ImageField(default='default.png', blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     pvn = models.PositiveSmallIntegerField(default=21)
@@ -62,11 +63,11 @@ class Size(models.Model):
     def __str__(self):
         return self.size
 
-
-
-
-
-
+class Color(models.Model):
+    name = models.CharField(max_length=30)
+    image = models.ImageField(default='default.png', blank=True)
+    def __str__(self):
+        return self.name
 
 """When model is changed do:
 python manage.py makemigrations
