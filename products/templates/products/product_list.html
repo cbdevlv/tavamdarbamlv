@@ -12,6 +12,12 @@
           {{color.name}}
         {%endfor%}
       </p>
+      <p>{{product.sizes}}</p>
+      <p>
+        {%for size in product.sizes.size.all %}
+          {{size}}
+        {%endfor%}
+      </p>
       <p>{{ place.colors.all|join:", " }}</p>
       <p>{{product.description}}</p>
       <p>Cena (bez PVN): {{product.price}}</p>
