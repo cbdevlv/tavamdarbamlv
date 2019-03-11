@@ -9,7 +9,7 @@
       <img src="{{product.image.url}}"/>
       <p>
         {%for color in product.colors.all %}
-          {{color.name}}
+          <img src="{{color.image.url}}" alt="{{color.name}}">
         {%endfor%}
       </p>
       <p>{{product.sizes}}</p>
