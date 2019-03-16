@@ -6,10 +6,20 @@
     <title>Homepage</title>
   </head>
   <body>
-    <h1>This is homepage</h1>
-    <p>Createing fancy page</p>
+    <div class="Menu">
 
+      {%for cat in top_level_cats%}
+        <b><a href="#">{{cat.name}}</a></b><br>
+          {%for lc in llc%}
+            {%if lc.parent == cat%}
+            <i><a href="#">{{lc.name}}</a></i><br>
+            {%endif%}
+          {%endfor%}
+      {%endfor%}
+    </div>
     <div>
+
+
       {% block content %}
       {% endblock %}
     </div>

@@ -1,12 +1,18 @@
 import csv, io
 #from django.contrib.auth.decorations import permisions_required
 from django.shortcuts import render
-from .models import Product, Size
+from .models import Product, Size, Category
 from django.http import HttpResponse
 
 def product_list(request):
     products = Product.objects.all()
-    return render(request, 'products/product_list.html', {'products':products})
+    category= Category.objects.all()
+    top_level_cats = Category.objects.filter(parent__isnull=True).order_by('name')
+    llc = Category.objects.filter(parent__isnull=False).order_by('name')
+
+
+    return render(request, 'products/product_list.html', {'products':products, 'category':category,
+                                        'top_level_cats':top_level_cats,'llc':llc})
 
 
 def show_category(request,hierarchy= None):

@@ -1,6 +1,7 @@
 {% extends 'homepage.html' %}
 
 {% block content %}
+
   <h1>Produktu saraksts</h1>
   <div class="products">
     {% for product in products %}
@@ -12,18 +13,17 @@
           <img src="{{color.image.url}}" alt="{{color.name}}">
         {%endfor%}
       </p>
-      <p>{{product.sizes}}</p>
       <p>
         {%for size in product.sizes.size.all %}
           {{size}}
         {%endfor%}
       </p>
-      <p>{{ place.colors.all|join:", " }}</p>
       <p>{{product.description}}</p>
       <p>Cena (bez PVN): {{product.price}}</p>
     <!--<p>Cena (ar PVN): Jāizmanto JavaScript, lai paņementu PVN vērtību un sareizinātu ar cenu un attēlot</p>-->
     </div>
     {% endfor %}
   </div>
+
 
 {% endblock %}
